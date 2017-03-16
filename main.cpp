@@ -128,6 +128,7 @@ int main(int argc, char *args[]) {
     lec_6::loop();
 
     // Let SDL clean the pointers.
+    SDL_GL_DeleteContext(context);
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     exit(0);
