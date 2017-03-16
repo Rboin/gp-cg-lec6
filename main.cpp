@@ -17,6 +17,7 @@ float pos_x = 100, pos_y = 200, size_x = 800, size_y = 600;
 
 SDL_Window *lec_6::window;
 SDL_Renderer *renderer;
+SDL_GLContext context;
 
 float f = 0.2f;
 
@@ -72,7 +73,8 @@ bool create_window() {
         std::cout << " Failed to open window: " << SDL_GetError() << std::endl;
         return false;
     }
-
+    context = SDL_GL_CreateContext(window);
+    SDL_GL_MakeCurrent(window, context);
     return true;
 }
 
